@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NoteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* Route::get('/', [Controller::class, 'funtion'])->name('example'); */
+/* Route::get('/note/{id}/{title}/{slug}', [NoteController::class, 'index'])->name('note.index'); */
+/* Route::get('/note/80', [NoteController::class, 'example'])->name('note.example'); */
+Route::get('/note/{id}', [NoteController::class, 'index'])->name('note.index');
