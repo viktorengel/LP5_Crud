@@ -2,12 +2,13 @@
 
 @section('content')
 <a href="{{ route('note.index') }}">Back</a>
-    <form action="">
+    <form method="POST" action="{{ route('note.store') }}">
+        @csrf
         <label for="">Title:</label>
-        <input type="text">
+        <input type="text" name="title">
 
-        <label for="">Description: </label>
-        <input type="text">
+        <label for="">Description:</label>
+        <input type="text" name="description">
 
         <input type="submit" value="create">
     </form>
